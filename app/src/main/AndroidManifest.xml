@@ -1,0 +1,23 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application
+        android:label="WaTweaks"
+        android:allowBackup="false"
+        android:theme="@android:style/Theme.Material.NoActionBar">
+        <meta-data android:name="xposedmodule" android:value="true" />
+        <meta-data android:name="xposeddescription" android:value="Compatibility diagnostics and local UI preferences" />
+        <meta-data android:name="xposedminversion" android:value="82" />
+        <activity
+            android:name="com.braininking.watweaks.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <provider
+            android:name="com.braininking.watweaks.core.SettingsProvider"
+            android:authorities="com.braininking.watweaks.settings"
+            android:exported="true"
+            android:grantUriPermissions="false" />
+    </application>
+</manifest>
